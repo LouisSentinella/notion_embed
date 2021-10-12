@@ -98,8 +98,14 @@ body{
 
 </body>
 <script>
-    const year = new Date().getFullYear();
-const myDate = new Date('Oct 11, 2021 14:05:00');
+var today = new Date();
+if (today.getMinutes() < 5){
+    today.minutes = 5
+    var myDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), 5, 0)
+}else{
+    var myDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours() + 1, 5, 0)
+}
+const year = new Date().getFullYear();
 console.log(myDate);
 
 // countdown
