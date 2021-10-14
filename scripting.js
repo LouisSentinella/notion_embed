@@ -105,7 +105,7 @@ function dateModifier(targetDay, currentDay){
 
 function updateGoalDate(todaysClasses){
     const today = new Date();
-    let currentSoonest = 10000000000000;
+    let currentSoonest = Number.MAX_SAFE_INTEGER;
     let currentSoonestReturn;
     for (i = 0; i < todaysClasses.length; i++) {
         if (((todaysClasses[i][1] - today.getTime()) > 0) && ((todaysClasses[i][1] - today.getTime()) < currentSoonest)) {
@@ -113,7 +113,6 @@ function updateGoalDate(todaysClasses){
             currentSoonest = (todaysClasses[i][1] - today.getTime())
         }
     }
-
     return currentSoonestReturn;
 }
 
