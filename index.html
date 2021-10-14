@@ -51,6 +51,7 @@ body{
   text-align: center;
 }
 
+
 .white {
   position: absolute;
   background:  #eeeeee;
@@ -80,50 +81,21 @@ body{
 
 
 }
-
-
     </style>
 </head>
 <body>
     
-<div id="timer">
-      <div class="minutes"> 
+<div id="timer" onclick="getModule(todaysClasses)">
+    <div class="days">
+        <div id="days" class="numbers"> </div>days</div>
+    <div class="hours">
+        <div  id="hours" class="numbers"> </div>hours</div>
+    <div class="minutes">
         <div  id="minutes" class="numbers"> </div>minutes</div> 
       <div  class="seconds"> 
-        <div id="seconds" class="numbers"> </div>seconds</div> 
-      </div>
+        <div id="seconds" class="numbers"> </div>seconds</div>
 </div>
 
 </body>
-<script>
-var today = new Date();
-if (today.getMinutes() < 5){
-    var myDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), 5, 0)
-}else{
-    var myDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours() + 1, 5, 0)
-}
-const year = new Date().getFullYear();
-console.log(myDate);
-
-// countdown
-let timer = setInterval(function() {
-
-  // get today's date
-  const today = new Date().getTime();
-
-  // get the difference
-  const diff = myDate - today;
-
-  // math
-  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  // display
-  document.getElementById("minutes").innerHTML=minutes
-  document.getElementById("seconds").innerHTML=seconds
-
-
-
-}, 1);
-</script>
+<script src="scripting.js"></script>
 </html>
