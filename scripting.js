@@ -85,7 +85,7 @@ function generateDates(currentSchedule) {
     let todaysClasses = [];
 
     const today = new Date();
-        console.log(currentSchedule)
+        //console.log(currentSchedule)
     for (i = 0; i< currentSchedule.length; i++){
         todaysClasses.push([currentSchedule[i][0], new Date(today.getFullYear(), today.getMonth(), today.getDate() + dateModifier(currentSchedule[i][3], today.getDay()) , currentSchedule[i][2].split(':')[0], currentSchedule[i][2].split(':')[1])])
 
