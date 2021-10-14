@@ -1,6 +1,6 @@
 # notion_embed
 
-##Description
+## Description
 
 It's just an embed for notion that counts down to the end of my next lecture
 
