@@ -4,7 +4,7 @@ function CSVToArray( strData, strDelimiter ){
     strDelimiter = (strDelimiter || ",");
 
     // Create a regular expression to parse the CSV values.
-    var objPattern = new RegExp(
+    let objPattern = new RegExp(
         (
             // Delimiters.
             "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
@@ -18,14 +18,13 @@ function CSVToArray( strData, strDelimiter ){
         "gi"
     );
 
-
     // Create an array to hold our data. Give the array
     // a default empty first row.
-    var arrData = [[]];
+    let arrData = [[]];
 
     // Create an array to hold our individual pattern
     // matching groups.
-    var arrMatches = null;
+    let arrMatches = null;
 
 
     // Keep looping over the regular expression matches
@@ -33,7 +32,7 @@ function CSVToArray( strData, strDelimiter ){
     while (arrMatches = objPattern.exec( strData )){
 
         // Get the delimiter that was found.
-        var strMatchedDelimiter = arrMatches[ 1 ];
+        let strMatchedDelimiter = arrMatches[1];
 
         // Check to see if the given delimiter has a length
         // (is not the start of string) and if it matches
@@ -50,7 +49,7 @@ function CSVToArray( strData, strDelimiter ){
 
         }
 
-        var strMatchedValue;
+        let strMatchedValue;
 
         // Now that we have our delimiter out of the way,
         // let's check to see which kind of value we
@@ -140,8 +139,7 @@ let todaysClasses = generateDates(currentSchedule);
 const year = new Date().getFullYear();
 // countdown
 let moduleDateArray;
-
-let timer = setInterval(function() {
+setInterval(function() {
 
     // get today's date
     const today = new Date().getTime();
