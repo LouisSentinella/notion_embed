@@ -86,7 +86,7 @@ function generateDates(currentSchedule) {
 
     const today = new Date();
         //console.log(currentSchedule)
-    for (i = 0; i< currentSchedule.length; i++){
+    for (let i = 0; i< currentSchedule.length; i++){
         todaysClasses.push([currentSchedule[i][0], new Date(today.getFullYear(), today.getMonth(), today.getDate() + dateModifier(currentSchedule[i][3], today.getDay()) , currentSchedule[i][2].split(':')[0], currentSchedule[i][2].split(':')[1])])
 
     }
@@ -107,7 +107,7 @@ function updateGoalDate(todaysClasses){
     const today = new Date();
     let currentSoonest = Number.MAX_SAFE_INTEGER;
     let currentSoonestReturn;
-    for (i = 0; i < todaysClasses.length; i++) {
+    for (let i = 0; i < todaysClasses.length; i++) {
         if (((todaysClasses[i][1] - today.getTime()) > 0) && ((todaysClasses[i][1] - today.getTime()) < currentSoonest)) {
             currentSoonestReturn = todaysClasses[i];
             currentSoonest = (todaysClasses[i][1] - today.getTime())
@@ -168,7 +168,4 @@ let timer = setInterval(function() {
     document.getElementById("hours").innerHTML=hours;
     document.getElementById("minutes").innerHTML=minutes;
     document.getElementById("seconds").innerHTML=seconds;
-
-
-
 }, 1);
